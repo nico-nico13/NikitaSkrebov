@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AllTest">
+    <test verbose="2" preserve-order="true" name="C:/Users/EVA Unit-11/Desktop/EPAM/selenium/HW1. Unit Frameworks/HW1">
+        <classes>
+            <class name="com.epam.tc.hw1.AddTest">
+                <methods>
+                    <include name="testAdd"/>
+                </methods>
+            </class>
+            <class name="com.epam.tc.hw1.DivideTest">
+                <methods>
+                    <include name="testDivide"/>
+                </methods>
+            </class>
+            <class name="com.epam.tc.hw1.MultiplyTest">
+                <methods>
+                    <include name="testMultiply"/>
+                </methods>
+            </class>
+            <class name="com.epam.tc.hw1.SubtractTest">
+                <methods>
+                    <include name="testSubtract"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
