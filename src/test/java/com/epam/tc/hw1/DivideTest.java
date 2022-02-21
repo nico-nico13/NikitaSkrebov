@@ -17,7 +17,7 @@ public class DivideTest {
             actual = a / b;
             assertThat(actual).isEqualTo(expected);
         } catch (ArithmeticException e) {
-            System.out.println("Can not divide to '0'");
+            System.out.println("Can not divide by 0");
         }
     }
 }
