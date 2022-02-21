@@ -12,7 +12,12 @@ public class DivideTest {
             dataProvider = "testing divide numbers"
     )
     public void testDivide(int a, int b, int expected) {
-        int actual = a / b;
-        assertThat(actual).isEqualTo(expected);
+      int actual;
+        try {
+            actual = a / b;
+            assertThat(actual).isEqualTo(expected);
+        } catch (ArithmeticException e) {
+            System.out.println("Can not divide to '0'");
+        }
     }
 }
