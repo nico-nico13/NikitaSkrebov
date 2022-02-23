@@ -12,7 +12,6 @@ public class DataProviderDivide {
                 {-5, 3, -1},
                 {3, -3, -1},
                 {1000, 500, 2},
-                {5, 0, 0}
         };
     }
 }
