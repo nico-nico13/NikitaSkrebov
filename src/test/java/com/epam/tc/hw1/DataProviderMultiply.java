@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 public class DataProviderMultiply {
 
     @DataProvider(name = "testing multiply numbers")
-    public static Object[][] getTestData() {
+    public static Object[][] getTestMultiplyData() {
         return new Object[][]{
                 {2, 2, 4},
                 {2, 1, 2},

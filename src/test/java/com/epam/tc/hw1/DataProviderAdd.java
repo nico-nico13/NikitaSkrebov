@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 public class DataProviderAdd {
 
     @DataProvider(name = "testing add numbers")
-    public static Object[][] getTestData() {
+    public static Object[][] getTestAddData() {
         return new Object[][]{
                 {0, 5, 5},
                 {5, 3, 8},

@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 public class DataProviderSubtract {
 
     @DataProvider(name = "testing subtract numbers")
-    public static Object[][] getTestData() {
+    public static Object[][] getTestSubtractData() {
         return new Object[][]{
                 {6, 5, 1},
                 {-5, 3, -8},
