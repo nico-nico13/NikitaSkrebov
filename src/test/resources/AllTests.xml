@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="AllTests">
+        <classes>
+            <class name="com.epam.tc.hw3.ex1.FirstExercise">
+                <methods>
+                    <include name="FirstTest"/>
+                </methods>
+            </class>
+            <class name="com.epam.tc.hw3.ex2.SecondExercise">
+                <methods>
+                    <include name="Second"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
