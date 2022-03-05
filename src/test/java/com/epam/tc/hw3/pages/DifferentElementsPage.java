@@ -1,5 +1,6 @@
 package com.epam.tc.hw3.pages;
 
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,11 +10,15 @@ import org.openqa.selenium.support.ui.Select;
 public class DifferentElementsPage {
 
     //checkboxes
+    @FindBy(xpath = "//div[@class='checkbox-row']/label[@class='label-checkbox']/input")
+    private List<WebElement> allCheckboxes;
     @FindBy(xpath = "//label[contains(., 'Water')]/input")
     private WebElement water;
     @FindBy(xpath = "//label[contains(., 'Wind')]/input")
     private WebElement wind;
     //radio
+    @FindBy(xpath = "//div[@class='checkbox-row']/label[@class='label-radio']/input")
+    private List<WebElement> allRadioCheckboxes;
     @FindBy(xpath = "//label[contains(.,'Selen')]/input")
     private WebElement selen;
     //select
@@ -34,37 +39,40 @@ public class DifferentElementsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void selectCheckboxex() {
-        water.click();
-        wind.click();
+    public void selectCheckboxes(String name) {
+        for (WebElement option : allCheckboxes) {
+            if (option.getText().equals(name)) {
+                option.click();
+            }
+        }
     }
 
-    public void selectRadio() {
-        selen.click();
+    public void selectRadio(String name) {
+        for (WebElement option : allRadioCheckboxes) {
+            if (option.getText().equals(name)) {
+                option.click();
+            }
+        }
     }
 
-    public void selectDropdown() {
+    public void selectYellowDropdown() {
         Select select = new Select(dropdown);
-        select.selectByIndex(3);
+        select.selectByVisibleText("Yellow");
     }
 
-    public String waterLogTest() {
-        String waterLogText = waterLog.getText();
-        return waterLogText;
+    public String waterLogText() {
+        return waterLog.getText();
     }
 
-    public String windLogTest() {
-        String windLogText = windLog.getText();
-        return windLogText;
+    public String windLogText() {
+        return windLog.getText();
     }
 
-    public String metalLogTest() {
-        String metalLogText = metalLog.getText();
-        return metalLogText;
+    public String metalLogText() {
+        return metalLog.getText();
     }
 
-    public String colorsLogTest() {
-        String colorsLogText = colorsLog.getText();
-        return colorsLogText;
+    public String colorsLogText() {
+        return colorsLog.getText();
     }
 }

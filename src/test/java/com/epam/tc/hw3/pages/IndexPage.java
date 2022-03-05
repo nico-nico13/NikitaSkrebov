@@ -36,13 +36,13 @@ public class IndexPage {
 
     // texts
     @FindBy(xpath = "//span[contains(.,'include')]")
-    private WebElement benifitText1;
+    private WebElement benefitText1;
     @FindBy(xpath = "//span[contains(.,'flexible')]")
-    private WebElement benifitText2;
+    private WebElement benefitText2;
     @FindBy(xpath = "//span[contains(.,'multi')]")
-    private WebElement benifitText3;
+    private WebElement benefitText3;
     @FindBy(xpath = "//span[contains(.,'base')]")
-    private WebElement benifitText4;
+    private WebElement benefitText4;
 
     // frame
     @FindBy(xpath = "//iframe[@id='frame']")
@@ -65,7 +65,7 @@ public class IndexPage {
     @FindBy(xpath = "//a[contains(@class, 'dropdown-toggle')]")
     private WebElement dropdownService;
     @FindBy(xpath = "//a[@href = 'different-elements.html']")
-    private WebElement diffentElementPageButton;
+    private WebElement differentElementPageButton;
 
 
     public IndexPage(WebDriver driver) {
@@ -80,8 +80,7 @@ public class IndexPage {
     }
 
     public String getLoginName() {
-        String name = userName.getText();
-        return name;
+        return userName.getText();
     }
 
     public boolean headerHomeDisplay() {
@@ -100,24 +99,20 @@ public class IndexPage {
         return headerMetalsColors.isDisplayed();
     }
 
-    public boolean headerHomeTextTest() {
-        String headerHomeText = headerHome.getText();
-        return headerHomeText.equals("HOME");
+    public String headerHomeText() {
+        return headerHome.getText();
     }
 
-    public boolean headerContactTextTest() {
-        String headerContactText = headerContact.getText();
-        return headerContactText.equals("CONTACT FORM");
+    public String headerContactText() {
+        return headerContact.getText();
     }
 
-    public boolean headerServiceTextTest() {
-        String headerServiceText = headerService.getText();
-        return headerServiceText.equals("SERVICE");
+    public String headerServiceText() {
+        return headerService.getText();
     }
 
-    public boolean headerMetalsColorsTextTest() {
-        String headerMetalsColorsText = headerMetalsColors.getText();
-        return headerMetalsColorsText.equals("METALS & COLORS");
+    public String headerMetalsColorsText() {
+        return headerMetalsColors.getText();
     }
 
     public boolean imagesTest() {
@@ -125,45 +120,35 @@ public class IndexPage {
     }
 
     public boolean text1Display() {
-        return benifitText1.isDisplayed();
+        return benefitText1.isDisplayed();
     }
 
     public boolean text2Display() {
-        return benifitText2.isDisplayed();
+        return benefitText2.isDisplayed();
     }
 
     public boolean text3Display() {
-        return benifitText3.isDisplayed();
+        return benefitText3.isDisplayed();
     }
 
     public boolean text4Display() {
-        return benifitText4.isDisplayed();
+        return benefitText4.isDisplayed();
     }
 
-    public boolean text1Test() {
-        String benefitText1 = benifitText1.getText();
-        return benefitText1.equals("To include good practices\n"
-                + "and ideas from successful\n"
-                + "EPAM project");
+    public String text1() {
+        return benefitText1.getText();
     }
 
-    public boolean text2Test() {
-        String benefitText2 = benifitText2.getText();
-        return benefitText2.equals("To be flexible and\n"
-                + "customizable");
+    public String text2() {
+        return benefitText2.getText();
     }
 
-    public boolean text3Test() {
-        String benefitText3 = benifitText3.getText();
-        return benefitText3.equals("To be multiplatform");
+    public String text3() {
+        return benefitText3.getText();
     }
 
-    public boolean text4Test() {
-        String benefitText4 = benifitText4.getText();
-        return benefitText4.equals("Already have good base\n"
-                + "(about 20 internal and\n"
-                + "some external projects),\n"
-                + "wish to get more…");
+    public String text4() {
+        return benefitText4.getText();
     }
 
     public boolean iframeEnable() {
@@ -194,33 +179,28 @@ public class IndexPage {
         return leftElementsPacks.isDisplayed();
     }
 
-    public boolean leftHomeTextTest() {
-        String leftHomeText = leftHome.getText();
-        return leftHomeText.equals("Home");
+    public String leftHomeText() {
+        return leftHome.getText();
     }
 
-    public boolean leftContactTextTest() {
-        String leftContactText = leftContact.getText();
-        return leftContactText.equals("Contact form");
+    public String leftContactText() {
+        return leftContact.getText();
     }
 
-    public boolean leftServiceTextTest() {
-        String leftServiceText = leftService.getText();
-        return leftServiceText.equals("Service");
+    public String leftServiceText() {
+        return leftService.getText();
     }
 
-    public boolean leftMetalsColorsTextTest() {
-        String leftMetalsColorsText = leftMetalsColors.getText();
-        return leftMetalsColorsText.equals("Metals & Colors");
+    public String leftMetalsColorsText() {
+        return leftMetalsColors.getText();
     }
 
-    public boolean leftElementsPacksTextTest() {
-        String leftElementsPacksText = leftElementsPacks.getText();
-        return leftElementsPacksText.equals("Elements packs");
+    public String leftElementsPacksText() {
+        return leftElementsPacks.getText();
     }
 
     public void openDifferentElementsPage() {
         dropdownService.click();
-        diffentElementPageButton.click();
+        differentElementPageButton.click();
     }
 }
