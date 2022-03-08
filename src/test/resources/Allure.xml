@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Allure Test Suite">
+    <listeners>
+        <listener class-name="com.epam.tc.hw4.listener.Listener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Allure">
+        <classes>
+            <class name="com.epam.tc.hw4.ex1.FirstExercise"/>
+            <class name="com.epam.tc.hw4.ex2.SecondExercise"/>
+        </classes>
+    </test>
+</suite>
