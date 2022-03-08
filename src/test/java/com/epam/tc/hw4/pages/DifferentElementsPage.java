@@ -1,5 +1,6 @@
 package com.epam.tc.hw4.pages;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
@@ -35,7 +36,7 @@ public class DifferentElementsPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Selecting checkboxes")
+    @Feature("Selecting checkboxes")
     public void selectCheckboxes(String name) {
         for (WebElement option : allCheckboxes) {
             if (option.getText().equals(name)) {
@@ -44,7 +45,7 @@ public class DifferentElementsPage {
         }
     }
 
-    @Step("Selecting radio checkbox")
+    @Feature("Selecting checkboxes")
     public void selectRadio(String name) {
         for (WebElement option : allRadioCheckboxes) {
             if (option.getText().equals(name)) {

@@ -1,6 +1,6 @@
 package com.epam.tc.hw4.listener;
 
-import com.epam.tc.hw4.other.AttachmentUtil;
+import com.epam.tc.hw4.utils.AttachmentUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

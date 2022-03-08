@@ -1,16 +1,15 @@
 package com.epam.tc.hw4.ex1;
 
-
-import com.epam.tc.hw4.BaseClass;
+import com.epam.tc.hw4.BaseTest;
 import com.epam.tc.hw4.pages.IndexPage;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class FirstExercise extends BaseClass {
+public class FirstExercise extends BaseTest {
 
     @Test
-    @Story("Test WebElements Display")
+    @Story("WebElements Display")
     public void testWebElementsDisplayWithProperText() {
 
         SoftAssert softAssert = new SoftAssert();
@@ -20,9 +19,10 @@ public class FirstExercise extends BaseClass {
         softAssert.assertEquals(driver.getTitle(), "Home Page");
 
         // 3. Perform login
+        indexPage.login(properties.getProperty("login"), properties.getProperty("password"));
 
         // 4. Assert Username is loggined
-        //softAssert.assertEquals(indexPage.getLoginName(), "ROMAN IOVLEV");
+        softAssert.assertEquals(indexPage.getLoginName(), "ROMAN IOVLEV");
 
         // 5. Assert that there are 4 items on the header section are displayed, and they have proper texts
         softAssert.assertTrue(indexPage.headerHomeDisplay());

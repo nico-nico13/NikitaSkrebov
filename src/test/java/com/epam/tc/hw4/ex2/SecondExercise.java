@@ -1,20 +1,16 @@
 package com.epam.tc.hw4.ex2;
 
-import com.epam.tc.hw4.BaseClass;
+import com.epam.tc.hw4.BaseTest;
 import com.epam.tc.hw4.pages.DifferentElementsPage;
 import com.epam.tc.hw4.pages.IndexPage;
 import io.qameta.allure.Story;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class SecondExercise extends BaseClass {
+public class SecondExercise extends BaseTest {
 
     @Test
-    @Story("Test Different Elements Page")
+    @Story("Different Elements Page")
     public void testDifferentElementsPage() {
 
         SoftAssert softAssert = new SoftAssert();
@@ -24,19 +20,7 @@ public class SecondExercise extends BaseClass {
         softAssert.assertEquals(driver.getTitle(), "Home Page");
 
         // 3. Perform login
-        FileInputStream fis;
-        Properties properties = new Properties();
-
-        try {
-            fis = new FileInputStream("src/test/resources/config.properties");
-            properties.load(fis);
-
-            indexPage.login(properties.getProperty("login"), properties.getProperty("password"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        indexPage.login(properties.getProperty("login"), properties.getProperty("password"));
 
         // 4. Assert Username is loggined
         softAssert.assertEquals(indexPage.getLoginName(), "ROMAN IOVLEV");
