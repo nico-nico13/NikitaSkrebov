@@ -10,14 +10,14 @@ import org.openqa.selenium.support.ui.Select;
 public class DifferentElementsPage {
 
     //checkboxes
-    @FindBy(xpath = "//div[@class='checkbox-row']/label[@class='label-checkbox']/input")
+    @FindBy(xpath = "//div[@class='checkbox-row']/label[@class='label-checkbox']")
     private List<WebElement> allCheckboxes;
     @FindBy(xpath = "//label[contains(., 'Water')]/input")
     private WebElement water;
     @FindBy(xpath = "//label[contains(., 'Wind')]/input")
     private WebElement wind;
     //radio
-    @FindBy(xpath = "//div[@class='checkbox-row']/label[@class='label-radio']/input")
+    @FindBy(xpath = "//div[@class='checkbox-row']/label[@class='label-radio']")
     private List<WebElement> allRadioCheckboxes;
     @FindBy(xpath = "//label[contains(.,'Selen')]/input")
     private WebElement selen;
