@@ -143,9 +143,30 @@
 
     <profiles>
         <profile>
-            <id>allureTest</id>
+            <id>AddSubtract</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <testng.suite.file>${testng.configs.path}/Allure.xml</testng.suite.file>
+                <testng.suite.file>${testng.configs.path}/AddSubtract.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>AllCalculatorTests</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/AllCalculatorTests.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>DivideMultiply</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/DivideMultiply.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>AllureTest</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/AllureTest.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
