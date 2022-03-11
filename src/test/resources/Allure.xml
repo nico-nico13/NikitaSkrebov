@@ -8,6 +8,7 @@
         <classes>
             <class name="com.epam.tc.hw4.ex1.FirstExercise"/>
             <class name="com.epam.tc.hw4.ex2.SecondExercise"/>
+            <class name="com.epam.tc.hw4.ex1fail.FirstExerciseFail"/>
         </classes>
     </test>
 </suite>

@@ -36,7 +36,7 @@ public class DifferentElementsPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Feature("Selecting checkboxes")
+
     public void selectCheckboxes(String name) {
         for (WebElement option : allCheckboxes) {
             if (option.getText().equals(name)) {
@@ -45,7 +45,6 @@ public class DifferentElementsPage {
         }
     }
 
-    @Feature("Selecting checkboxes")
     public void selectRadio(String name) {
         for (WebElement option : allRadioCheckboxes) {
             if (option.getText().equals(name)) {
@@ -54,28 +53,23 @@ public class DifferentElementsPage {
         }
     }
 
-    @Step("Selecting Yellow option in dropdown")
     public void selectYellowDropdown() {
         Select select = new Select(dropdown);
         select.selectByVisibleText("Yellow");
     }
 
-    @Step("Getting water log text")
     public String waterLogText() {
         return waterLog.getText();
     }
 
-    @Step("Getting wind log text")
     public String windLogText() {
         return windLog.getText();
     }
 
-    @Step("Getting metal log text")
     public String metalLogText() {
         return metalLog.getText();
     }
 
-    @Step("Getting color log text")
     public String colorsLogText() {
         return colorsLog.getText();
     }

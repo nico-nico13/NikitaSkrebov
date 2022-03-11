@@ -1,4 +1,4 @@
-package com.epam.tc.hw4.ex1;
+package com.epam.tc.hw4.ex1fail;
 
 import static io.qameta.allure.Allure.step;
 
@@ -9,9 +9,8 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-
-@Feature("WebElements")
-public class FirstExercise extends BaseTest {
+@Feature("WebElements Fail")
+public class FirstExerciseFail extends BaseTest {
 
     @Test
     @Story("WebElements display with proper text")
@@ -26,12 +25,12 @@ public class FirstExercise extends BaseTest {
         IndexPage indexPage = new IndexPage(driver);
 
         // 3. Perform login
-        step("Login user: {name} , {password}");
+        step("Login");
         indexPage.login(properties.getProperty("login"), properties.getProperty("password"));
 
         // 4. Assert Username is loggined
         step("Assert User is loggined");
-        softAssert.assertEquals(indexPage.getLoginName(), "ROMAN IOVLEV");
+        softAssert.assertEquals(indexPage.getLoginName(), "ROM");
 
         // 5. Assert that there are 4 items on the header section are displayed, and they have proper texts
         step("Assert 4 header items are displayed with proper text");
@@ -63,7 +62,7 @@ public class FirstExercise extends BaseTest {
         softAssert.assertEquals(indexPage.text4(), "Already have good base\n"
                 + "(about 20 internal and\n"
                 + "some external projects),\n"
-                + "wish to get more…");
+                + "wish to get more!!!");
 
         // 8. Assert that there is the iframe with “Frame Button” exists
         step("Assert iframe exists");
@@ -86,7 +85,7 @@ public class FirstExercise extends BaseTest {
         softAssert.assertTrue(indexPage.leftMetalsColorsDisplay());
         softAssert.assertTrue(indexPage.leftElementsPacksDisplay());
         softAssert.assertEquals(indexPage.leftHomeText(), "Home");
-        softAssert.assertEquals(indexPage.leftContactText(), "Contact form");
+        softAssert.assertEquals(indexPage.leftContactText(), "Contact");
         softAssert.assertEquals(indexPage.leftServiceText(), "Service");
         softAssert.assertEquals(indexPage.leftMetalsColorsText(), "Metals & Colors");
         softAssert.assertEquals(indexPage.leftElementsPacksText(), "Elements packs");
