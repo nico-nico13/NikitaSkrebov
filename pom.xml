@@ -27,6 +27,7 @@
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+
     </properties>
 
     <dependencies>
@@ -59,7 +60,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
-
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
@@ -144,6 +144,12 @@
 
     <profiles>
         <profile>
+            <id>AllTests</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/AllTests.xml</testng.suite.file>
+            </properties>
+        </profile>
+       <profile>
             <id>AddSubtract</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
