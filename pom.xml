@@ -110,9 +110,9 @@
 
     <profiles>
         <profile>
-            <id>AllTests</id>
+            <id>AllCalculatorTests</id>
             <properties>
-                <testng.suite.file>${testng.configs.path}/AllTests.xml</testng.suite.file>
+                <testng.suite.file>${testng.configs.path}/AllCalculatorTests.xml</testng.suite.file>
             </properties>
         </profile>
        <profile>
@@ -125,15 +125,21 @@
             </properties>
         </profile>
         <profile>
-            <id>AllTest</id>
-            <properties>
-                <testng.suite.file>${testng.configs.path}/AllTest.xml</testng.suite.file>
-            </properties>
-        </profile>
-        <profile>
             <id>DivideMultiply</id>
             <properties>
                 <testng.suite.file>${testng.configs.path}/DivideMultiply.xml</testng.suite.file>
+            </properties>
+        </profile>
+              <profile>
+            <id>AllTestsHW2</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/AllTestsHW2.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>AllTestsHW3</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/AllTestsHW3.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
