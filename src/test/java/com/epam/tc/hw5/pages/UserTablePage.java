@@ -1,14 +1,14 @@
 package com.epam.tc.hw5.pages;
 
-import com.epam.tc.hw5.context.TestContext;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class UserTablePage {
+
+    private final WebDriver driver;
 
     @FindBy(xpath = "//input[@type='checkbox' and @id='ivan']")
     private WebElement ivanVipCheckbox;
@@ -24,10 +24,9 @@ public class UserTablePage {
     @FindBy(xpath = "//input[@type='checkbox']")
     private List<WebElement> checkboxes;
 
-    WebDriver driver = TestContext.getInstance().getObject("driver", WebDriver.class);
-
     public UserTablePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
 
     public void makeIvanVip() {

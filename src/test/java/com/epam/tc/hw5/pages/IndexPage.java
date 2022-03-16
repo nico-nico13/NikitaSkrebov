@@ -1,12 +1,13 @@
 package com.epam.tc.hw5.pages;
 
-import com.epam.tc.hw5.context.TestContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class IndexPage {
+
+    private final WebDriver driver;
 
     // login elements
     @FindBy(xpath = "//li[contains(@class,'uui-profile-menu')]")
@@ -28,10 +29,9 @@ public class IndexPage {
     @FindBy(xpath = "//a[@href='user-table.html']")
     private WebElement userTablePageButton;
 
-    WebDriver driver = TestContext.getInstance().getObject("driver", WebDriver.class);
-
     public IndexPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
 
     public void login(String name, String password) {
