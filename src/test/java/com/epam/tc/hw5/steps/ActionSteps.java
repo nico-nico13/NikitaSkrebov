@@ -14,7 +14,7 @@ public class ActionSteps extends AbstractSteps {
         differentElementsPage.selectRadio(radio);
     }
 
-    @When("I select {string} in dropdown")
+    @When("I select 'Yellow' in dropdown")
     public void selectDropdown() {
         differentElementsPage.selectYellowDropdown();
     }
