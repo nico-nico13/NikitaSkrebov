@@ -18,7 +18,7 @@ Feature:WebElements display on User Table Page
       | 4      | Helen Bennett    | Captain America some description |
       | 5      | Yoshi Tannamuri  | Cyclope some description         |
       | 6      | Giovanni Rovelli | Hulksome description             |
-    And droplist should contain values in column Type for user Roman
+    And Droplist should contain values in column Type for user Roman
       | Dropdown Values |
       | Admin           |
       | User            |

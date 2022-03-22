@@ -4,8 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import com.epam.tc.hw5.pages.UserTablePage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -58,17 +60,45 @@ public class AssertionSteps extends AbstractSteps {
     public void assertCheckboxes() {
         assertTrue(userTablePage.checkboxesDisplay());
     }
-    
-    //@Then("User table should contain following values:")
 
+    @Then("User table should contain following values:")
+    public void assertUserTable(DataTable dataTable) {
+        List<Map<String, String>> usersList = dataTable.asMaps(String.class, String.class);
 
-   //    public void assertUserTable(DataTable dataTable) {
-   //        List<List<String, String>> usersList = dataTable.;
-   //        List<String> values = usersList.stream().map(o -> o.get("Number")).collect(Collectors.toList());
-   //        for (int i = 0; i < values.size(); i++) {
-   //            Assert.assertEquals(values.get(i), list.get(i).getText);
-   //        }
-   //    }
+        List<String> stringsNumberExpected = new ArrayList<>();
+        List<String> stringsNumberActual = userTablePage.getNumber();
+        for (Map<String, String> rowNumber : usersList) {
+            stringsNumberExpected.add(rowNumber.get("Number"));
+        }
+        assertEquals(stringsNumberExpected, stringsNumberActual);
+
+        List<String> stringsUserExpected = new ArrayList<>();
+        List<String> stringsUserActual = userTablePage.getUser();
+        for (Map<String, String> rowUser : usersList) {
+            stringsUserExpected.add(rowUser.get("User"));
+        }
+        assertEquals(stringsUserExpected, stringsUserActual);
+
+        //List<String> stringsDescriptionExpected = new ArrayList<>();
+        //List<String> stringsDescriptionActual = userTablePage.getDescription();
+        //for (Map<String, String> rowDescription : usersList) {
+        //    stringsDescriptionExpected.add(rowDescription.get("Description"));
+        //}
+        //assertEquals(stringsDescriptionExpected, stringsDescriptionActual);
+    }
+
+    @Then("Droplist should contain values in column Type for user Roman")
+    public void assertDroplist(DataTable dataTable) {
+        List<Map<String, String>> values = dataTable.asMaps(String.class, String.class);
+
+        List<String> valuesExpected = new ArrayList<>();
+        List<String> valuesActual = userTablePage.getDropdownValues();
+        for (Map<String, String> row : values) {
+            valuesExpected.add(row.get("Dropdown Values"));
+        }
+        assertEquals(valuesActual, valuesExpected);
+    }
+
 
     //exercise3
     @Then("1 log row has \"Vip: condition changed to true\" text in log section")
