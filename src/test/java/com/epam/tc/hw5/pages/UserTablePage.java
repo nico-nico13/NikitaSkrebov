@@ -90,7 +90,7 @@ public class UserTablePage {
     public List<String> getDropdownValues() {
         List<String> strings = new ArrayList<>();
         for (WebElement str : dropdownRoman) {
-            strings.add(str.getText().to);
+            strings.add(str.getText());
         }
         return strings;
     }

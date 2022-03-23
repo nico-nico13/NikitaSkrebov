@@ -4,10 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import com.epam.tc.hw5.pages.UserTablePage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -79,12 +79,13 @@ public class AssertionSteps extends AbstractSteps {
         }
         assertEquals(stringsUserExpected, stringsUserActual);
 
-        //List<String> stringsDescriptionExpected = new ArrayList<>();
-        //List<String> stringsDescriptionActual = userTablePage.getDescription();
-        //for (Map<String, String> rowDescription : usersList) {
-        //    stringsDescriptionExpected.add(rowDescription.get("Description"));
-        //}
-        //assertEquals(stringsDescriptionExpected, stringsDescriptionActual);
+        List<String> stringsDescriptionExpected = new ArrayList<>();
+        List<String> stringsDescriptionActual = userTablePage.getDescription();
+        for (Map<String, String> rowDescription : usersList) {
+            stringsDescriptionExpected.add(rowDescription.get("Description"));
+        }
+        assertThat(stringsDescriptionExpected).usingElementComparator(Comparator.comparing(el ->
+                el.replaceAll("\\s", ""))).isEqualTo(stringsDescriptionActual);
     }
 
     @Then("Droplist should contain values in column Type for user Roman")
@@ -96,7 +97,8 @@ public class AssertionSteps extends AbstractSteps {
         for (Map<String, String> row : values) {
             valuesExpected.add(row.get("Dropdown Values"));
         }
-        assertEquals(valuesActual, valuesExpected);
+        assertThat(valuesActual).usingElementComparator(Comparator.comparing(el ->
+                el.replaceAll("\\s", ""))).isEqualTo(valuesExpected);
     }
 
 
