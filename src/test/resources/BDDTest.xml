@@ -3,10 +3,7 @@
 <suite name="BDD Test Suite">
     <test verbose="2" preserve-order="true" name="BDD Test">
         <classes>
-            <class name="com.epam.tc.hw5.ex3.UserTablePageLogsTest">
-                <methods>
-                    <include name="UserTablePageLogsTest"/>
-                </methods>
+            <class name="com.epam.tc.hw5.TestRunner">
             </class>
         </classes>
     </test>
