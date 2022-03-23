@@ -178,7 +178,6 @@
         </profile>
         <profile>
             <id>AllTestsHW2</id>
-            <properties>
                 <testng.suite.file>${testng.configs.path}/AllTestsHW2.xml</testng.suite.file>
             </properties>
         </profile>
@@ -195,13 +194,19 @@
             </properties>
         </profile>
         <profile>
+            <id>BDDTest</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/BDDTest.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
             <id>GridTest</id>
             <properties>
                 <testng.suite.file>${testng.configs.path}/GridTest.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
-             
+
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
