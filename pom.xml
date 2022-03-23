@@ -21,6 +21,8 @@
         <slf4j-simple.version>1.7.35</slf4j-simple.version>
         <aspectj.version>1.9.7</aspectj.version>
         <allure-maven.version>2.11.2</allure-maven.version>
+        <cucumber.version>7.2.3</cucumber.version>
+
 
         <testng.configs.path>${project.build.testOutputDirectory}</testng.configs.path>
 
@@ -74,6 +76,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
         </dependency>
     </dependencies>
 
@@ -149,7 +161,7 @@
                 <testng.suite.file>${testng.configs.path}/AllCalculatorTests.xml</testng.suite.file>
             </properties>
         </profile>
-       <profile>
+        <profile>
             <id>AddSubtract</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -159,17 +171,13 @@
             </properties>
         </profile>
         <profile>
-            <id>AllCalculatorTests</id>
-            <properties>
-                <testng.suite.file>${testng.configs.path}/AllCalculatorTests.xml</testng.suite.file>
             <id>DivideMultiply</id>
             <properties>
                 <testng.suite.file>${testng.configs.path}/DivideMultiply.xml</testng.suite.file>
             </properties>
         </profile>
-              <profile>
+        <profile>
             <id>AllTestsHW2</id>
-            <properties>
                 <testng.suite.file>${testng.configs.path}/AllTestsHW2.xml</testng.suite.file>
             </properties>
         </profile>
@@ -183,6 +191,12 @@
             <id>AllureTest</id>
             <properties>
                 <testng.suite.file>${testng.configs.path}/AllureTest.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>BDDTest</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/BDDTest.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
