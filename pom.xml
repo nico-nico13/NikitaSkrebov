@@ -197,7 +197,6 @@
                 <testng.suite.file>${testng.configs.path}/Allure.xml</testng.suite.file>
             </properties>
         </profile>
-
         <profile>
             <id>GridTest</id>
             <properties>
