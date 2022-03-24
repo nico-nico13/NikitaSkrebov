@@ -178,6 +178,7 @@
         </profile>
         <profile>
             <id>AllTestsHW2</id>
+            <properties>
                 <testng.suite.file>${testng.configs.path}/AllTestsHW2.xml</testng.suite.file>
             </properties>
         </profile>
