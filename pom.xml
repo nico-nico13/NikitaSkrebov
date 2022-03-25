@@ -23,7 +23,6 @@
         <allure-maven.version>2.11.2</allure-maven.version>
         <cucumber.version>7.2.3</cucumber.version>
 
-
         <testng.configs.path>${project.build.testOutputDirectory}</testng.configs.path>
 
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
@@ -106,7 +105,8 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <argLine>
-                        --illegal-access=permit -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        --illegal-access=permit
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
@@ -178,6 +178,7 @@
         </profile>
         <profile>
             <id>AllTestsHW2</id>
+            <properties>
                 <testng.suite.file>${testng.configs.path}/AllTestsHW2.xml</testng.suite.file>
             </properties>
         </profile>
@@ -190,13 +191,19 @@
         <profile>
             <id>AllureTest</id>
             <properties>
-                <testng.suite.file>${testng.configs.path}/AllureTest.xml</testng.suite.file>
+                <testng.suite.file>${testng.configs.path}/Allure.xml</testng.suite.file>
             </properties>
         </profile>
         <profile>
             <id>BDDTest</id>
             <properties>
                 <testng.suite.file>${testng.configs.path}/BDDTest.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>GridTest</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/GridTest.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
@@ -211,6 +218,5 @@
             </plugin>
         </plugins>
     </reporting>
-
 
 </project>
