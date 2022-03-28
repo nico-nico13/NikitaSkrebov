@@ -1,30 +1,33 @@
 package com.epam.tc.hw7;
 
-import static com.epam.tc.hw7.entities.TestData.DEFAULT_DATA;
 import static com.epam.tc.hw7.entities.User.ROMAN;
 import static com.epam.tc.hw7.site.JdiSite.*;
 import static com.epam.tc.hw7.site.pages.HomePage.*;
-import static com.epam.tc.hw7.site.pages.MetalsColorsPage.*;
-
+import com.epam.tc.hw7.entities.TestData;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import com.epam.jdi.light.driver.WebDriverUtils;
 
-@Test
 public class TestRunner implements TestsInit {
 
-    public void JdiTest() {
+    @BeforeSuite
+    public void testSetUp() {
         homePage.open();
         userIcon.click();
         loginForm.loginAs(ROMAN);
-        userName.is().displayed();
-        metalsColorsPage.open();
-//        elementsSelect.select(4);
-        metalsColorsForm.fill(DEFAULT_DATA);
-//        metalsColorsForm.submit(DEFAULT_DATA);
-//        oddsSelect.select(3);
-//        evenSelect.select(2);
+    }
 
-//        metalsSelect.select("Bronze");
-//        colorsSelect.select("Red");
-//        vegetablesSelect.check("Tomato", "Cucumber");
+    @Test(dataProviderClass = DataProviderJDI.class,
+    dataProvider = "dataForMetalColorTest")
+    public void JdiTest(TestData testData) {
+        metalsColorsPage.open();
+        metalsColorsForm.submitForm(testData);
+        metalsColorsPage.assertResults(testData);
+    }
+
+    @AfterTest
+    public void testTearDown() {
+        WebDriverUtils.killAllSeleniumDrivers();
     }
 }
