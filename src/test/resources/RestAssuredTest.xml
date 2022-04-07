@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RestAssured Tests Suite">
+    <test verbose="2" preserve-order="true" name="RestAssured Test">
+        <classes>
+            <class name="com.epam.tc.hw9.TestRunner">
+                <methods>
+                    <include name="createBoard"/>
+                    <include name="createBoardList"/>
+                    <include name="createCard"/>
+                    <include name="getBoard"/>
+                    <include name="getList"/>
+                    <include name="getCard"/>
+                    <include name="giveBoardNewName"/>
+                    <include name="giveListNewName"/>
+                    <include name="giveCardNewName"/>
+                    <include name="killCard"/>
+                    <include name="terminateBoard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
