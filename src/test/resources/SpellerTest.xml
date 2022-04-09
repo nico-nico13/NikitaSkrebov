@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Speller Test Suite">
+    <test verbose="2" preserve-order="true" name="Speller Test">
+        <classes>
+            <class name="com.epam.tc.hw10.SpellerTest">
+            </class>
+        </classes>
+    </test>
+</suite>
