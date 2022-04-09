@@ -1,0 +1,36 @@
+[
+  {
+    "text": [
+      "worled",
+      "biach"
+    ],
+    "lang": "en",
+    "options": "0",
+    "word": [
+      "worled",
+      "biach"
+    ],
+    "s": [
+      "world",
+      "beach"
+    ],
+    "code": "1"
+  },
+  {
+    "text": [
+      "svrong",
+      "mudic"
+    ],
+    "lang": "en",
+    "options": "0",
+    "word": [
+      "svrong",
+      "mudic"
+    ],
+    "s": [
+      "wrong",
+      "music"
+    ],
+    "code": "1"
+  }
+]
