@@ -87,6 +87,16 @@
             <version>${cucumber.version}</version>
         </dependency>
     </dependencies>
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-html</artifactId>
+            <version>${jdi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-core.version}</version>
+        </dependency>
 
     <build>
         <plugins>
@@ -204,6 +214,13 @@
             <id>GridTest</id>
             <properties>
                 <testng.suite.file>${testng.configs.path}/GridTest.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profiles>
+        <profile>
+            <id>JdiTest</id>
+            <properties>
+                <testng.suite.file>${testng.configs.path}/xml/JdiTest.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
